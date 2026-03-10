@@ -1,0 +1,33 @@
+<div class="picker-wrap">
+  <h2>A Simple Color Picker</h2>
+
+  <div class="panel">
+    <div class="left">
+      <p>Background (enter values from '00' to 'FF')</p>
+      <div class="line">
+        <label>RED:</label><input [(ngModel)]="bgR" maxlength="2" name="bgR">
+        <label>GREEN:</label><input [(ngModel)]="bgG" maxlength="2" name="bgG">
+        <label>BLUE:</label><input [(ngModel)]="bgB" maxlength="2" name="bgB">
+      </div>
+
+      <p>Text (enter values from '00' to 'FF')</p>
+      <div class="line">
+        <label>RED:</label><input [(ngModel)]="textR" maxlength="2" name="textR">
+        <label>GREEN:</label><input [(ngModel)]="textG" maxlength="2" name="textG">
+        <label>BLUE:</label><input [(ngModel)]="textB" maxlength="2" name="textB">
+      </div>
+
+      <div class="actions">
+        <button type="button" (click)="applyColor()">Apply</button>
+        <button type="button" (click)="reload()">Reload</button>
+      </div>
+      <small class="error" *ngIf="error">{{ error }}</small>
+    </div>
+
+    <div class="right" [style.background]="previewBg" [style.color]="previewText">
+      <h3>HAMLET:</h3>
+      <p>{{ hamlet }}</p>
+    </div>
+  </div>
+</div>
+
