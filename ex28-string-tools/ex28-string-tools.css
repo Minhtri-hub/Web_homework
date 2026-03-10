@@ -1,0 +1,43 @@
+.string-wrap {
+  width: 780px;
+  margin-top: 12px;
+  border: 1px solid #8ba9ff;
+  padding: 10px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.boxes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.box {
+  border: 1px solid #a9a9a9;
+  padding: 6px;
+}
+
+.box h2 {
+  margin: 0 0 6px;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.actions-grid {
+  margin-top: 8px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.full {
+  grid-column: 1 / -1;
+}
+

@@ -1,0 +1,27 @@
+<div class="string-wrap">
+  <h1>Sử dụng các hàm Xử Lý Chuỗi</h1>
+
+  <div class="boxes">
+    <div class="box">
+      <h2>Nhập dữ liệu</h2>
+      <textarea [(ngModel)]="inputText" rows="6" name="inputText"></textarea>
+    </div>
+    <div class="box">
+      <h2>Kết quả</h2>
+      <textarea [value]="resultText" rows="6" readonly></textarea>
+    </div>
+  </div>
+
+  <div class="actions-grid">
+    <button (click)="nhapDuLieu()">Nhập dữ liệu</button>
+    <button (click)="denKyTuHoa()">Đến ký tự hoa</button>
+    <button (click)="inChuHoa()">In chữ Hoa</button>
+    <button (click)="inMoiTuTrenMoiDong()">In mỗi từ trên mỗi dòng</button>
+    <button (click)="inChuThuong()">In chữ thường</button>
+    <button (click)="demSoTu()">Đếm số từ</button>
+    <button (click)="demSoKyTuThuong()">Đếm số ký tự thường</button>
+    <button (click)="inNguyenAmPhuAm()">In Nguyên âm, phụ âm</button>
+    <button class="full" (click)="openW3c()">Xem Website xử lý chuỗi w3c</button>
+  </div>
+</div>
+
