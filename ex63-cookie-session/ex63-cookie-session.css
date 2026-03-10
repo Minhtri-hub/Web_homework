@@ -1,0 +1,31 @@
+h2 {
+  margin: 10px 0;
+}
+
+.compare {
+  border-collapse: collapse;
+  margin-bottom: 12px;
+}
+
+.compare th,
+.compare td {
+  padding: 6px 8px;
+}
+
+.demo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.box {
+  border: 1px solid #b7b7b7;
+  padding: 8px;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 8px;
+}
+

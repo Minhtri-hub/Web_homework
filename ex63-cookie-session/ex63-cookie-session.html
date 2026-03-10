@@ -1,0 +1,52 @@
+<h2>Bài 63 - Ý nghĩa của Cookie và Session</h2>
+
+<table border="1" class="compare">
+  <tr>
+    <th>Tiêu chí</th>
+    <th>Cookie</th>
+    <th>Session</th>
+  </tr>
+  <tr>
+    <td>Lưu ở đâu</td>
+    <td>Trình duyệt client</td>
+    <td>Phía server (client giữ session id)</td>
+  </tr>
+  <tr>
+    <td>Thời gian sống</td>
+    <td>Do thời gian hết hạn cookie</td>
+    <td>Thường hết khi đóng trình duyệt hoặc timeout server</td>
+  </tr>
+  <tr>
+    <td>Dung lượng</td>
+    <td>Nhỏ (~4KB/cookie)</td>
+    <td>Linh hoạt hơn cookie</td>
+  </tr>
+  <tr>
+    <td>Bảo mật</td>
+    <td>Thấp hơn nếu lưu dữ liệu nhạy cảm</td>
+    <td>Tốt hơn vì dữ liệu ở server</td>
+  </tr>
+</table>
+
+<div class="demo">
+  <div class="box">
+    <h3>Demo Cookie</h3>
+    <div class="actions">
+      <button (click)="setCookieDemo()">Set Cookie</button>
+      <button (click)="readCookieDemo()">Read Cookie</button>
+      <button (click)="clearCookieDemo()">Clear Cookie</button>
+    </div>
+    <p>{{ cookieOutput }}</p>
+  </div>
+
+  <div class="box">
+    <h3>Demo Session (sessionStorage)</h3>
+    <div class="actions">
+      <button (click)="setSessionDemo()">Set Session</button>
+      <button (click)="readSessionDemo()">Read Session</button>
+      <button (click)="clearSessionDemo()">Clear Session</button>
+    </div>
+    <p>{{ sessionOutput }}</p>
+  </div>
+</div>
+
