@@ -1,0 +1,76 @@
+<h2>Template-Driven Form</h2>
+
+<form #contactForm="ngForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="row">
+    <label>Full Name</label>
+    <input
+      type="text"
+      name="fullName"
+      required
+      minlength="3"
+      [(ngModel)]="model.fullName"
+      #fullName="ngModel">
+    <small class="error" *ngIf="fullName.invalid && (fullName.touched || contactForm.submitted)">
+      Full name must be at least 3 characters.
+    </small>
+  </div>
+
+  <div class="row">
+    <label>Email</label>
+    <input
+      type="email"
+      name="email"
+      required
+      email
+      [(ngModel)]="model.email"
+      #email="ngModel">
+    <small class="error" *ngIf="email.invalid && (email.touched || contactForm.submitted)">
+      Enter a valid email.
+    </small>
+  </div>
+
+  <div class="row">
+    <label>Phone</label>
+    <input
+      type="text"
+      name="phone"
+      required
+      pattern="^[0-9]{10,11}$"
+      [(ngModel)]="model.phone"
+      #phone="ngModel">
+    <small class="error" *ngIf="phone.invalid && (phone.touched || contactForm.submitted)">
+      Phone must have 10-11 digits.
+    </small>
+  </div>
+
+  <div class="row">
+    <label>Topic</label>
+    <select name="topic" required [(ngModel)]="model.topic" #topic="ngModel">
+      <option value="">Select topic</option>
+      <option value="Template Form">Template Form</option>
+      <option value="Reactive Form">Reactive Form</option>
+      <option value="Validation">Validation</option>
+    </select>
+    <small class="error" *ngIf="topic.invalid && (topic.touched || contactForm.submitted)">
+      Choose one topic.
+    </small>
+  </div>
+
+  <div class="row">
+    <label>Message</label>
+    <textarea name="message" rows="4" [(ngModel)]="model.message"></textarea>
+  </div>
+
+  <div class="row inline">
+    <input type="checkbox" name="agree" required [(ngModel)]="model.agree" #agree="ngModel">
+    <label>I agree to terms</label>
+  </div>
+  <small class="error" *ngIf="agree.invalid && (agree.touched || contactForm.submitted)">
+    You must agree before submit.
+  </small>
+
+  <button type="submit" [disabled]="contactForm.invalid">Submit</button>
+</form>
+
+<pre *ngIf="submittedData">{{ submittedData | json }}</pre>
+

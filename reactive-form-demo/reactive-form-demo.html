@@ -1,0 +1,60 @@
+<h2>Reactive Form</h2>
+
+<form [formGroup]="profileForm" (ngSubmit)="onSubmit()" novalidate>
+  <div class="row">
+    <label>Username</label>
+    <input type="text" formControlName="username">
+    <small class="error" *ngIf="profileForm.get('username')?.invalid && profileForm.get('username')?.touched">
+      Username must be at least 4 characters.
+    </small>
+  </div>
+
+  <div class="row">
+    <label>Email</label>
+    <input type="email" formControlName="email">
+    <small class="error" *ngIf="profileForm.get('email')?.invalid && profileForm.get('email')?.touched">
+      Enter a valid email.
+    </small>
+  </div>
+
+  <div class="row">
+    <label>Age</label>
+    <input type="number" formControlName="age">
+    <small class="error" *ngIf="profileForm.get('age')?.invalid && profileForm.get('age')?.touched">
+      Age must be 18 or above.
+    </small>
+  </div>
+
+  <div class="row">
+    <label>Password</label>
+    <input type="password" formControlName="password">
+  </div>
+
+  <div class="row">
+    <label>Confirm Password</label>
+    <input type="password" formControlName="confirmPassword">
+  </div>
+
+  <small class="error" *ngIf="profileForm.errors?.['fieldsMismatch'] && (profileForm.get('confirmPassword')?.touched || profileForm.touched)">
+    Password and confirm password do not match.
+  </small>
+
+  <div class="row">
+    <label>Start Date</label>
+    <input type="date" formControlName="startDate">
+  </div>
+
+  <div class="row">
+    <label>End Date</label>
+    <input type="date" formControlName="endDate">
+  </div>
+
+  <small class="error" *ngIf="profileForm.errors?.['invalidDateRange'] && (profileForm.get('endDate')?.touched || profileForm.touched)">
+    End date must be greater than or equal to start date.
+  </small>
+
+  <button type="submit">Submit</button>
+</form>
+
+<pre *ngIf="submittedData">{{ submittedData | json }}</pre>
+
