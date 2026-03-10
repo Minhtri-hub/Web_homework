@@ -1,0 +1,56 @@
+﻿[
+  {
+    "CustomerTypeId": 1,
+    "CustomerTypeName": "VIP",
+    "Customers": [
+      {
+        "Id": "Cus123",
+        "Name": "Obama",
+        "Email": "obama@gmail.com",
+        "Age": 67,
+        "Image": "assets/avatars/obama-avatar.png"
+      },
+      {
+        "Id": "Cus456",
+        "Name": "Kim Jong Un",
+        "Email": "kimjongun@gmail.com",
+        "Age": 41,
+        "Image": "assets/avatars/kimjongun-avatar.png"
+      },
+      {
+        "Id": "Cus788",
+        "Name": "Urunn",
+        "Email": "urunn@gmail.com",
+        "Age": 38,
+        "Image": "assets/avatars/urunn-avatar.png"
+      },
+      {
+        "Id": "Cus789",
+        "Name": "Putin",
+        "Email": "putin@gmail.com",
+        "Age": 77,
+        "Image": "assets/avatars/putin-avatar.png"
+      }
+    ]
+  },
+  {
+    "CustomerTypeId": 2,
+    "CustomerTypeName": "Normal",
+    "Customers": [
+      {
+        "Id": "Cus000",
+        "Name": "Hồ Cẩm Đào",
+        "Email": "hodao@gmail.com",
+        "Age": 16,
+        "Image": "assets/avatars/hodao-avatar.png"
+      },
+      {
+        "Id": "Cus111",
+        "Name": "Tập Cận Bình",
+        "Email": "binhbinh@gmail.com",
+        "Age": 67,
+        "Image": "assets/avatars/binhbinh-avatar.png"
+      }
+    ]
+  }
+]
