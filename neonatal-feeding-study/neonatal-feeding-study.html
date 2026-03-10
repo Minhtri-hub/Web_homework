@@ -1,0 +1,98 @@
+<div class="study-wrap">
+  <h2>Neonatal Feeding Study</h2>
+
+  <form (ngSubmit)="submitForm()">
+    <div class="row right">
+      <label>Today:</label>
+      <input type="text" [value]="today" readonly>
+    </div>
+
+    <div class="row">
+      <label>1) Name (first, last):</label>
+      <div class="inline">
+        <input #firstNameInput type="text" [(ngModel)]="firstName" name="firstName">
+        <input type="text" [(ngModel)]="lastName" name="lastName">
+      </div>
+    </div>
+
+    <div class="row">
+      <label>2) Medical Record #:</label>
+      <input type="text" [(ngModel)]="medicalRecord" name="medicalRecord">
+    </div>
+
+    <div class="row">
+      <label>3) Date of birth:</label>
+      <input type="text" placeholder="mm/dd/yy" [(ngModel)]="dateOfBirth" name="dateOfBirth">
+    </div>
+
+    <div class="row">
+      <label>4) Physician:</label>
+      <select [(ngModel)]="physician" name="physician" (blur)="onPhysicianBlur()">
+        <option value="Dr.Warren Albert">Dr.Warren Albert</option>
+        <option value="Dr.Bill Smith">Dr.Bill Smith</option>
+        <option value="Dr.Jane David">Dr.Jane David</option>
+        <option value="other">Other</option>
+      </select>
+    </div>
+
+    <div class="row" *ngIf="physician === 'other'">
+      <label>If other (specify):</label>
+      <input type="text" [(ngModel)]="otherPhysician" name="otherPhysician" (blur)="onPhysicianBlur()">
+      <small class="error" *ngIf="otherPhysicianError">{{ otherPhysicianError }}</small>
+    </div>
+
+    <div class="apgar">
+      <p>5) 1 Minute APGAR Score: <small>Each score must be 0, 1, or 2</small></p>
+
+      <div class="row">
+        <label>Activity</label>
+        <input type="number" min="0" max="2" [(ngModel)]="apgarScores.activity" name="activity" (ngModelChange)="validateApgar('activity')">
+        <small class="error" *ngIf="apgarErrors.activity">{{ apgarErrors.activity }}</small>
+      </div>
+
+      <div class="row">
+        <label>Pulse</label>
+        <input type="number" min="0" max="2" [(ngModel)]="apgarScores.pulse" name="pulse" (ngModelChange)="validateApgar('pulse')">
+        <small class="error" *ngIf="apgarErrors.pulse">{{ apgarErrors.pulse }}</small>
+      </div>
+
+      <div class="row">
+        <label>Grimace (Reflex, irritability)</label>
+        <input type="number" min="0" max="2" [(ngModel)]="apgarScores.grimace" name="grimace" (ngModelChange)="validateApgar('grimace')">
+        <small class="error" *ngIf="apgarErrors.grimace">{{ apgarErrors.grimace }}</small>
+      </div>
+
+      <div class="row">
+        <label>Appearance (Skin Color)</label>
+        <input type="number" min="0" max="2" [(ngModel)]="apgarScores.appearance" name="appearance" (ngModelChange)="validateApgar('appearance')">
+        <small class="error" *ngIf="apgarErrors.appearance">{{ apgarErrors.appearance }}</small>
+      </div>
+
+      <div class="row">
+        <label>Respiration</label>
+        <input type="number" min="0" max="2" [(ngModel)]="apgarScores.respiration" name="respiration" (ngModelChange)="validateApgar('respiration')">
+        <small class="error" *ngIf="apgarErrors.respiration">{{ apgarErrors.respiration }}</small>
+      </div>
+
+      <div class="row total">
+        <label>TOTAL</label>
+        <input type="number" [value]="totalScore" readonly>
+      </div>
+    </div>
+
+    <div class="row">
+      <label>6) Birth weight (gms):</label>
+      <input type="number" [(ngModel)]="birthWeight" name="birthWeight">
+    </div>
+
+    <div class="row">
+      <label>7) Parental Consent (required):</label>
+      <input type="checkbox" [(ngModel)]="parentalConsent" name="parentalConsent">
+    </div>
+
+    <div class="actions">
+      <button type="submit">Register</button>
+      <button type="button" (click)="reloadPage()">Reload Page</button>
+    </div>
+  </form>
+</div>
