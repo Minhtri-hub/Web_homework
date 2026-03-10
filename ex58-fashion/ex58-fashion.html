@@ -1,0 +1,18 @@
+<h2>Bài 58 - HTTP GET - A Fashion</h2>
+<p class="error" *ngIf="errMessage">{{ errMessage }}</p>
+
+<table border="1">
+  <tr>
+    <th>FashionId</th>
+    <th>FashionName</th>
+    <th>Price</th>
+    <th>Image</th>
+  </tr>
+  <tr *ngFor="let item of fashions">
+    <td>{{ item.FashionId }}</td>
+    <td>{{ item.FashionName }}</td>
+    <td>{{ item.Price }}</td>
+    <td><img [src]="item.Image" [alt]="item.FashionName" width="80" height="80"></td>
+  </tr>
+</table>
+
